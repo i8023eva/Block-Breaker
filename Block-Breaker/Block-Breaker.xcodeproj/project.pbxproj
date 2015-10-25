@@ -17,6 +17,7 @@
 		14A088481BDCB7CA00916EC0 /* Block_BreakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A088471BDCB7CA00916EC0 /* Block_BreakerUITests.m */; };
 		14A088561BDCC47A00916EC0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A088551BDCC47A00916EC0 /* QuartzCore.framework */; };
 		14A088591BDCC61B00916EC0 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A088581BDCC61B00916EC0 /* UIView+CGRect.m */; settings = {ASSET_TAGS = (); }; };
+		14B387221BDD1960005ADC07 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B387211BDD1960005ADC07 /* icon.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		14A088571BDCC61B00916EC0 /* UIView+CGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGRect.h"; sourceTree = "<group>"; };
 		14A088581BDCC61B00916EC0 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
 		14A0885A1BDCC64C00916EC0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		14B387211BDD1960005ADC07 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				14A0882E1BDCB7CA00916EC0 /* Assets.xcassets */,
+				14B387211BDD1960005ADC07 /* icon.png */,
 				14A088301BDCB7CA00916EC0 /* LaunchScreen.storyboard */,
 				14A088331BDCB7CA00916EC0 /* Info.plist */,
 				14A088231BDCB7CA00916EC0 /* main.m */,
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B387221BDD1960005ADC07 /* icon.png in Resources */,
 				14A088321BDCB7CA00916EC0 /* LaunchScreen.storyboard in Resources */,
 				14A0882F1BDCB7CA00916EC0 /* Assets.xcassets in Resources */,
 				14A0882D1BDCB7CA00916EC0 /* Main.storyboard in Resources */,
@@ -425,7 +429,6 @@
 		14A0884D1BDCB7CA00916EC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Block-Breaker/PrefixHeader.pch";
 				INFOPLIST_FILE = "Block-Breaker/Info.plist";
@@ -438,7 +441,6 @@
 		14A0884E1BDCB7CA00916EC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Block-Breaker/PrefixHeader.pch";
 				INFOPLIST_FILE = "Block-Breaker/Info.plist";

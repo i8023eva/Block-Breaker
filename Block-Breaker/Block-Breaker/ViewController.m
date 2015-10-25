@@ -18,11 +18,16 @@
 @property (weak, nonatomic) IBOutlet UIImageView *paddleImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *ballImageView;
-// 初始位置
+
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+
+// 小球初始位置
 @property (nonatomic, assign) CGPoint ballCenter;
+//挡板初始位置
+@property (nonatomic, assign) CGPoint paddleCenter;
 //游戏时钟
 @property (nonatomic, strong) CADisplayLink *gameTimer;
-//速度
+//小球速度
 @property (nonatomic, assign) CGPoint ballVelocity;
 //挡板的水平速度
 @property (nonatomic, assign) CGFloat paddleVeloCityX;
@@ -31,25 +36,28 @@
 
 @implementation ViewController
 
--(CADisplayLink *)gameTimer {
-    if (_gameTimer == nil) {
-        
-        _gameTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
-        [_gameTimer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    }
-    return _gameTimer;
-}
-#pragma mark - 开始移动
+#pragma mark - 开始游戏
 - (IBAction)tapScreen:(id)sender {
     NSLog(@"error ---%s ---%d", __func__, __LINE__);
     //停止手势, 防止速度累加
     self.tapGesture.enabled = NO;
+    //隐藏提示
+    self.messageLabel.hidden = YES;
+    //小球
+    self.ballImageView.center = self.ballCenter;
+    //挡板
+    self.paddleImageView.center = self.paddleCenter;
+    //砖块  ---所有砖块取消隐藏
+    for (UIImageView *block in self.blockImageViews) {
+        block.hidden = NO;
+    }
     /**
      *  设置初始速度
      */
     self.ballVelocity = CGPointMake(0.0, -8.0);
     
-    [self gameTimer];
+    self.gameTimer = [CADisplayLink displayLinkWithTarget:self selector:@selector(step)];
+    [self.gameTimer addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     
 }
 #pragma mark - 游戏刷新
@@ -86,6 +94,14 @@
         NSLog(@">>>游戏结束");
         //关闭时钟
         [self.gameTimer invalidate];
+        //提示
+        self.messageLabel.hidden = NO;
+        self.messageLabel.text = @"你是SB";
+        //启用点击手势
+        self.tapGesture.enabled = YES;
+        /**
+         *  @return 初始化游戏 [小球位置][挡板位置][砖块]
+         */
     }
 }
 /**
@@ -101,6 +117,25 @@
             _ballVelocity.y *= -1;
         }
     }
+    //遍历所有砖块是否都隐藏
+    BOOL win = YES;
+    for (UIImageView *block in self.blockImageViews) {
+        if (![block isHidden]) {
+            win = NO;
+            break;
+        }
+    }
+    //游戏胜利
+    if (win) {
+        //关闭时钟
+        [self.gameTimer invalidate];
+        //提示
+        self.messageLabel.hidden = NO;
+        self.messageLabel.text = @"你不是SB";
+        //启用点击手势
+        self.tapGesture.enabled = YES;
+    }
+    
 }
 /**
  *  挡板检测
@@ -141,8 +176,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    //记录初始位置
+    //记录小球初始位置
     self.ballCenter = self.ballImageView.center;
+    //记录挡板初始位置
+    self.paddleCenter = self.paddleImageView.center;
 }
 
 - (void)didReceiveMemoryWarning {

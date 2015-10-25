@@ -123,6 +123,14 @@
                                 <animations/>
                                 <rect key="contentStretch" x="0.5" y="0.0" width="0.0" height="1"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始游戏..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="puc-P3-voM">
+                                <rect key="frame" x="0.0" y="323" width="375" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="1" green="0.32889486362812737" blue="0.21129754849159066" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -136,6 +144,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ballImageView" destination="JgH-mR-UYf" id="oei-re-fpy"/>
+                        <outlet property="messageLabel" destination="puc-P3-voM" id="bbc-Xr-c0L"/>
                         <outlet property="paddleImageView" destination="l9y-YG-cIi" id="yzf-WT-fa8"/>
                         <outlet property="tapGesture" destination="jAJ-Pg-yrn" id="mnd-0r-8cc"/>
                         <outletCollection property="blockImageViews" destination="ouR-LD-KqG" id="itI-mK-raA"/>
