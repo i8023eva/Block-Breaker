@@ -134,7 +134,28 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="ballImageView" destination="JgH-mR-UYf" id="oei-re-fpy"/>
+                        <outlet property="paddleImageView" destination="l9y-YG-cIi" id="yzf-WT-fa8"/>
                         <outlet property="tapGesture" destination="jAJ-Pg-yrn" id="mnd-0r-8cc"/>
+                        <outletCollection property="blockImageViews" destination="ouR-LD-KqG" id="itI-mK-raA"/>
+                        <outletCollection property="blockImageViews" destination="J94-ZH-6gP" id="NEz-bK-FQZ"/>
+                        <outletCollection property="blockImageViews" destination="eCQ-OX-Db0" id="r3G-tz-waU"/>
+                        <outletCollection property="blockImageViews" destination="LgQ-Fb-Eus" id="3cn-xT-W5Q"/>
+                        <outletCollection property="blockImageViews" destination="4ZM-TE-jQK" id="tUy-S8-xiq"/>
+                        <outletCollection property="blockImageViews" destination="w0L-Tl-kfr" id="e6T-hf-Xif"/>
+                        <outletCollection property="blockImageViews" destination="rAC-Kl-LmY" id="n28-Xe-I51"/>
+                        <outletCollection property="blockImageViews" destination="jHG-aX-UZ7" id="E1L-xs-j9Q"/>
+                        <outletCollection property="blockImageViews" destination="gkx-wZ-8fJ" id="8uK-j9-L5W"/>
+                        <outletCollection property="blockImageViews" destination="UAY-4t-6rZ" id="RBg-lm-bpZ"/>
+                        <outletCollection property="blockImageViews" destination="iuI-LD-ZDP" id="KfL-jO-jhO"/>
+                        <outletCollection property="blockImageViews" destination="XN4-Ot-2d2" id="Dyb-cn-cSf"/>
+                        <outletCollection property="blockImageViews" destination="EXa-9F-HM8" id="7Sm-OO-wuQ"/>
+                        <outletCollection property="blockImageViews" destination="qdb-rH-13R" id="gtz-uq-OlX"/>
+                        <outletCollection property="blockImageViews" destination="i6r-Ty-5yG" id="9no-DA-nSQ"/>
+                        <outletCollection property="blockImageViews" destination="0vC-Ov-9lr" id="MpE-94-c54"/>
+                        <outletCollection property="blockImageViews" destination="VRw-4X-HLe" id="8hg-Ua-MHN"/>
+                        <outletCollection property="blockImageViews" destination="xTb-oQ-hLy" id="xWo-Lj-nZ1"/>
+                        <outletCollection property="blockImageViews" destination="qDr-aS-ROX" id="D6Y-Ax-gUx"/>
+                        <outletCollection property="blockImageViews" destination="NnC-aq-nZe" id="fBN-Oc-H7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
