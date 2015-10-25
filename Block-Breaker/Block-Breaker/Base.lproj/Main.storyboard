@@ -125,11 +125,24 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jAJ-Pg-yrn" appends="YES" id="Z9Z-0S-JCb"/>
+                        </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="ballImageView" destination="JgH-mR-UYf" id="oei-re-fpy"/>
+                        <outlet property="tapGesture" destination="jAJ-Pg-yrn" id="mnd-0r-8cc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jAJ-Pg-yrn">
+                    <connections>
+                        <action selector="tapScreen:" destination="BYZ-38-t0r" id="NfJ-GJ-zzj"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="154.5" y="356.5"/>
         </scene>

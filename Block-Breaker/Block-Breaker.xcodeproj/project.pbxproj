@@ -15,6 +15,8 @@
 		14A088321BDCB7CA00916EC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14A088301BDCB7CA00916EC0 /* LaunchScreen.storyboard */; };
 		14A0883D1BDCB7CA00916EC0 /* Block_BreakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A0883C1BDCB7CA00916EC0 /* Block_BreakerTests.m */; };
 		14A088481BDCB7CA00916EC0 /* Block_BreakerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A088471BDCB7CA00916EC0 /* Block_BreakerUITests.m */; };
+		14A088561BDCC47A00916EC0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A088551BDCC47A00916EC0 /* QuartzCore.framework */; };
+		14A088591BDCC61B00916EC0 /* UIView+CGRect.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A088581BDCC61B00916EC0 /* UIView+CGRect.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		14A088431BDCB7CA00916EC0 /* Block-BreakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Block-BreakerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14A088471BDCB7CA00916EC0 /* Block_BreakerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block_BreakerUITests.m; sourceTree = "<group>"; };
 		14A088491BDCB7CA00916EC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14A088551BDCC47A00916EC0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		14A088571BDCC61B00916EC0 /* UIView+CGRect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CGRect.h"; sourceTree = "<group>"; };
+		14A088581BDCC61B00916EC0 /* UIView+CGRect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CGRect.m"; sourceTree = "<group>"; };
+		14A0885A1BDCC64C00916EC0 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A088561BDCC47A00916EC0 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +88,7 @@
 		14A088161BDCB7CA00916EC0 = {
 			isa = PBXGroup;
 			children = (
+				14A088551BDCC47A00916EC0 /* QuartzCore.framework */,
 				14A088211BDCB7CA00916EC0 /* Block-Breaker */,
 				14A0883B1BDCB7CA00916EC0 /* Block-BreakerTests */,
 				14A088461BDCB7CA00916EC0 /* Block-BreakerUITests */,
@@ -101,14 +109,13 @@
 		14A088211BDCB7CA00916EC0 /* Block-Breaker */ = {
 			isa = PBXGroup;
 			children = (
+				14A088571BDCC61B00916EC0 /* UIView+CGRect.h */,
+				14A088581BDCC61B00916EC0 /* UIView+CGRect.m */,
 				14A088251BDCB7CA00916EC0 /* AppDelegate.h */,
 				14A088261BDCB7CA00916EC0 /* AppDelegate.m */,
 				14A088281BDCB7CA00916EC0 /* ViewController.h */,
 				14A088291BDCB7CA00916EC0 /* ViewController.m */,
 				14A0882B1BDCB7CA00916EC0 /* Main.storyboard */,
-				14A0882E1BDCB7CA00916EC0 /* Assets.xcassets */,
-				14A088301BDCB7CA00916EC0 /* LaunchScreen.storyboard */,
-				14A088331BDCB7CA00916EC0 /* Info.plist */,
 				14A088221BDCB7CA00916EC0 /* Supporting Files */,
 			);
 			path = "Block-Breaker";
@@ -117,7 +124,11 @@
 		14A088221BDCB7CA00916EC0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				14A0882E1BDCB7CA00916EC0 /* Assets.xcassets */,
+				14A088301BDCB7CA00916EC0 /* LaunchScreen.storyboard */,
+				14A088331BDCB7CA00916EC0 /* Info.plist */,
 				14A088231BDCB7CA00916EC0 /* main.m */,
+				14A0885A1BDCC64C00916EC0 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -275,6 +286,7 @@
 			files = (
 				14A0882A1BDCB7CA00916EC0 /* ViewController.m in Sources */,
 				14A088271BDCB7CA00916EC0 /* AppDelegate.m in Sources */,
+				14A088591BDCC61B00916EC0 /* UIView+CGRect.m in Sources */,
 				14A088241BDCB7CA00916EC0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +426,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Block-Breaker/PrefixHeader.pch";
 				INFOPLIST_FILE = "Block-Breaker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "i8023eva.Block-Breaker";
@@ -425,6 +439,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Block-Breaker/PrefixHeader.pch";
 				INFOPLIST_FILE = "Block-Breaker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "i8023eva.Block-Breaker";
@@ -499,6 +515,7 @@
 				14A0884E1BDCB7CA00916EC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A0884F1BDCB7CA00916EC0 /* Build configuration list for PBXNativeTarget "Block-BreakerTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +524,7 @@
 				14A088511BDCB7CA00916EC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14A088521BDCB7CA00916EC0 /* Build configuration list for PBXNativeTarget "Block-BreakerUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +533,7 @@
 				14A088541BDCB7CA00916EC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
