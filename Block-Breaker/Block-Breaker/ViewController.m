@@ -24,6 +24,8 @@
 @property (nonatomic, strong) CADisplayLink *gameTimer;
 //速度
 @property (nonatomic, assign) CGPoint ballVelocity;
+//挡板的水平速度
+@property (nonatomic, assign) CGFloat paddleVeloCityX;
 
 @end
 
@@ -71,6 +73,20 @@
         tmpVelocity.y = ABS(self.ballVelocity.y);
         self.ballVelocity = tmpVelocity;
     }
+    //屏幕左侧
+    if (CGRectGetMinX(self.ballImageView.frame) <= 0) {
+        _ballVelocity.x = ABS(_ballVelocity.x);
+    }
+    //屏幕右侧
+    if (CGRectGetMaxX(self.ballImageView.frame) >= self.view.width) {
+        _ballVelocity.x = -ABS(_ballVelocity.x);
+    }
+    //屏幕底部
+    if (CGRectGetMinY(self.ballImageView.frame) >= self.view.height) {
+        NSLog(@">>>游戏结束");
+        //关闭时钟
+        [self.gameTimer invalidate];
+    }
 }
 /**
  *  砖块检测
@@ -93,12 +109,33 @@
     if (CGRectIntersectsRect(self.paddleImageView.frame, self.ballImageView.frame)) {
         //速度方向为负
         _ballVelocity.y = -ABS(_ballVelocity.y);
+        //挡板赋予的速度[修正, 没有监测时间]
+        _ballVelocity.x += _paddleVeloCityX / 120.0;
     }
 }
 
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
+}
+#pragma mark - 拖动挡板
+- (IBAction)dragPaddle:(UIPanGestureRecognizer *) sender {
+/**
+ 1>挡板移动
+ 2>记录水平移动速度  ---与小球交互时才改变小球的速度
+ */
+    //判断手指是否在移动
+    if (UIGestureRecognizerStateChanged == sender.state) {
+        //获取手指移动到的位置
+        CGPoint location = [sender locationInView:self.view];
+        //只改变水平位置, y 不变
+        self.paddleImageView.center = CGPointMake(location.x, self.paddleImageView.centerY);
+        //记录  ---添加到小球
+        self.paddleVeloCityX = [sender velocityInView:self.view].x;
+    } else if(UIGestureRecognizerStateEnded == sender.state) {
+        //停止拖动时, 挡板水平速度清0, 否则最后一次速度会记录下来并添加到小球
+        self.paddleVeloCityX = 0;
+    }
 }
 
 - (void)viewDidLoad {

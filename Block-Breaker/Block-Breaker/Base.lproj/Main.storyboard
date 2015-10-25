@@ -118,9 +118,10 @@
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paddle" id="l9y-YG-cIi">
-                                <rect key="frame" x="155" y="553" width="64" height="20"/>
+                                <rect key="frame" x="20" y="553" width="335" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <rect key="contentStretch" x="0.5" y="0.0" width="0.0" height="1"/>
                             </imageView>
                         </subviews>
                         <animations/>
@@ -128,6 +129,7 @@
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="jAJ-Pg-yrn" appends="YES" id="Z9Z-0S-JCb"/>
+                            <outletCollection property="gestureRecognizers" destination="r1J-Oo-fBJ" appends="YES" id="EYi-XT-dMf"/>
                         </connections>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -164,6 +166,11 @@
                         <action selector="tapScreen:" destination="BYZ-38-t0r" id="NfJ-GJ-zzj"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="r1J-Oo-fBJ">
+                    <connections>
+                        <action selector="dragPaddle:" destination="BYZ-38-t0r" id="qP2-UM-eoF"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="154.5" y="356.5"/>
         </scene>
